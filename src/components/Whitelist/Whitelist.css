@@ -1,0 +1,36 @@
+.Whitelist{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 200px;
+    overflow-y: hidden;
+}
+
+.Whitelist__title{
+    font-family: 'Lemonada';
+    font-size: 50px;
+    color: #fff;
+    width: 60vw;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Whitelist__button{
+    color: #000;
+    background-color: #d1ac4d;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin-top: 100px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}

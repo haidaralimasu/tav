@@ -1,0 +1,74 @@
+.ChooseArt{
+    margin-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ChooseArt__title{
+    font-family: 'Lemonada';
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    width: 60vw;
+    line-height: 1.5;
+}
+
+.ChooseArt__row{
+    display: flex;
+    justify-content: space-around;
+    width: 70vw;
+    margin-top: 50px;
+}
+
+.ChooseArt__button{
+    color: #000;
+    background-color: #d1ac4d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ChooseArt__ArtColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+}
+
+.ChooseArt__id{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.ChooseArt__image{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.ChooseArt__selectedColumn{
+    color: #000;
+}
+
+.ChooseArt__selectedButton{
+    background-color: #fff;
+    border-radius: 20px 20px 0px 0px;
+    margin-bottom: 0px;
+    padding: 15px;
+}
+
+.ChooseArt__selectedId{
+    background-color: #fff;
+    color: #000;
+}

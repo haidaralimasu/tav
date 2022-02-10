@@ -1,0 +1,40 @@
+.Info{
+    margin-top: 500px;
+}
+
+.Info__title{
+    font-family: 'Lemonada';
+    font-size: 50px;
+    color: #000;
+}
+
+.title__center{
+    text-align: center;
+}
+
+.Info__content{
+    margin-left: 100px;
+}
+
+.Info__image_2{
+    margin-left: 10vw;
+    border: 5px solid black;
+}
+
+.Info__row{
+    display: flex;
+    padding-right: 10vw;
+    line-height: 2;
+}
+
+.Info__cta_row{
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.Info__cta_img{
+    margin-right:10px;
+}

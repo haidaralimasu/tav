@@ -1,0 +1,19 @@
+.Video{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Video__title{
+    font-family: 'Lemonada';
+    font-size: 50px;
+    color: #000;
+    text-align: center;
+}
+
+.Video__placeholder{
+    margin-top:50px;
+    width: 50%;
+}

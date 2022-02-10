@@ -1,0 +1,37 @@
+.Cta{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.Cta__background{
+    width:100vw;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.Cta__title{
+    font-family: 'Lemonada';
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.Cta__description{
+    color: white;
+    width: 40%;
+    text-align: center;
+    font-size:20px;
+    margin-top:30px;
+    line-height:1.7;
+}
+
+.description_wide{
+    width: 65%;
+}
