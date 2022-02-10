@@ -8,7 +8,7 @@
 
 .Video__title{
     font-family: 'Lemonada';
-    font-size: 50px;
+    font-size: 3em;
     color: #000;
     text-align: center;
 }
@@ -16,4 +16,16 @@
 .Video__placeholder{
     margin-top:50px;
     width: 50%;
+}
+
+@media only screen and (max-width: 800px) {
+    .Video{
+        margin-left: 35px;
+    }
+    .Video__placeholder{
+        width: 90vw;
+    }
+    .Video__title{
+        font-size:2em;
+    }
 }

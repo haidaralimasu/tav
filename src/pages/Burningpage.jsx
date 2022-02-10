@@ -7,8 +7,12 @@ import art2 from '../components/ChooseArt/art2.png';
 import art3 from '../components/ChooseArt/art3.png';
 import art4 from '../components/ChooseArt/art4.png';
 import BurnNft from '../components/BurnNft';
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 function Burningpage() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
   const artList = [
     {id: 11, image: art1},
     {id: 111, image: art2},
@@ -16,11 +20,12 @@ function Burningpage() {
     {id: 999, image: art4},
   ]
   const [selectedArt, setSelectedArt] = useState(0)
-  return <div>
-      <img src={background} style={{position: 'absolute', width: "100vw", top: 0, left: 0, zIndex: -1}}/>
+  return <div style={{backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+      <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen}/>
       <MintHero/>
       <ChooseArt artList={artList} selectedArt={selectedArt} setSelectedArt={setSelectedArt} />
       <BurnNft artList={artList} selectedArt={selectedArt}/>
+      <Footer/>
   </div>;
 }
 

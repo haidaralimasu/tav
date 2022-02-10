@@ -1,14 +1,23 @@
+.Hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 500px;
+}
+
 .Hero__background{
     position: absolute;
     top: 0px;
     z-index: -1;
-    width: 100vw;
+    width: 105vw;
 }
 
 .Hero__title_section{
     display: flex;
     margin-top: 20vh;
     justify-content: center;
+    align-items: center;
     text-align: center;
     width: 100vw;
 }
@@ -42,7 +51,7 @@
 
 .Hero__button_row{
     display: flex;
-    margin-top: 20vh;
+    margin-top: 10vw;
     align-items: center;
     justify-content: center;
 }
@@ -67,4 +76,18 @@
 .white_button{
     border: 4px solid white;
     background-color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+    .Hero__title{
+        font-size:2em;
+    }
+    .Hero__background{
+        height: 130vh;
+        object-fit:cover;
+    }
+    .Hero__title_section{
+        width: 70vw;
+        margin-left: 40px;
+    }
 }

@@ -4,7 +4,7 @@ import React from 'react';
 function BurnNft({selectedArt, artList}) {
   return (
     <div className="BurnNft">
-        <div className="BurnNft__title">Burn the NFT and Get<br />the Compensation</div>
+        <div className="BurnNft__title">Burn the NFT and Get the Compensation</div>
         <div className="BurnNft__row">
             <img src={artList[1].image} alt={artList[1].id} className="BurnNft__largeImg"/>
             <div className="BurnNft__column">

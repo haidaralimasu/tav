@@ -72,3 +72,23 @@
     background-color: #fff;
     color: #000;
 }
+
+@media screen and (max-width:800px) {
+    .ChooseArt{
+        margin-top:50px;
+    }
+
+    .ChooseArt__title{
+        font-size: 30px;
+    }
+    .ChooseArt__row{
+        flex-direction: column;
+    }
+
+    .ChooseArt__ArtColumn{
+        margin-bottom: 20px;
+    }
+    .ChooseArt__image{
+        width: 100%;
+    }
+}

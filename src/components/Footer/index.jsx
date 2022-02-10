@@ -11,9 +11,9 @@ import youtube from './youtube.svg';
 function Footer() {
   return (
     <div className="Footer">
-        <img src={background} alt="Footer Background" className="Footer__background"/>
+        {/* <img src={background} alt="Footer Background" className="Footer__background"/> */}
         <img src={logo} alt="Prestige Logo" className="Footer__logo"/>
-        <div className="Footer__row">
+        {/* <div className="Footer__row">
             <div className="Footer__column">
                 <div className="Footer__column_title">OUR <span className="Footer__highlighted_text">LINKS</span></div>
                 <div className="Footer__column_item" style={{marginLeft: "10px"}}>Home</div>
@@ -33,7 +33,7 @@ function Footer() {
                 <div className="Footer__column_item"><img src={twitter} alt="Twitter" className="Footer__icon"/> <span className="Footer__column_item_text">Twitter</span></div>
                 <div className="Footer__column_item"><img src={youtube} alt="Youtube" className="Footer__icon"/> <span className="Footer__column_item_text">Youtube</span></div>
             </div>
-        </div>
+        </div> */}
         <div className="Footer__copyright">
             Copyright © 2022. All Right Reserved.
         </div>

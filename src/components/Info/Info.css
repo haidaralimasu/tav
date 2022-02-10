@@ -1,5 +1,5 @@
 .Info{
-    margin-top: 500px;
+    margin-top: 200px;
 }
 
 .Info__title{
@@ -16,9 +16,18 @@
     margin-left: 100px;
 }
 
+.Info__image{
+    width: 50vw;
+    object-fit: contain;
+}
+
 .Info__image_2{
     margin-left: 10vw;
     border: 5px solid black;
+    max-width: 70vw;
+    width: 30vw;
+    height: 30vw;
+    object-fit: contain;
 }
 
 .Info__row{
@@ -37,4 +46,23 @@
 
 .Info__cta_img{
     margin-right:10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .Info{
+        margin-top: 30vw;
+    }
+    .Info__image{
+        width: 90vw;
+    }
+    .Info__row{
+        flex-direction: column;
+    }
+    .Info__image_2{
+        width: 100vw;
+        height: 100vw;
+        object-fit: cover;
+        margin-left: 15vw;
+        margin-bottom: 50px;
+    }
 }

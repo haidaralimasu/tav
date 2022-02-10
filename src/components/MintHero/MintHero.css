@@ -29,3 +29,13 @@
     color: white;
     font-size: 20px;
 }
+
+@media screen and (max-width:800px) {
+    .MintHero__title{
+        font-size: 25px;
+    }
+    .MintHero__description{
+        margin: 30px;
+        text-align: center;
+    }
+}

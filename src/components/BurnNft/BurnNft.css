@@ -79,3 +79,36 @@
     margin-top: 10px;
     margin-left: 30px;
 }
+
+@media screen and (max-width:800px) {
+    .BurnNft{
+        margin-top:50px;
+    }
+    .BurnNft__title{
+        font-size: 30px;
+    }
+    .BurnNft__row{
+        flex-direction: column;
+    }
+    .BurnNft__largeImg{
+        width: 80vw;
+        margin-left: 50px;
+    }
+
+    .BurnNft__column_title{
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .BurnNft__column_subtitle{
+        text-align: center;
+    }
+
+    .BurnNft__smallImg{
+        width: 80vw;
+    }
+
+    .BurnNft__id{
+        margin-top: 20px;
+    }
+}

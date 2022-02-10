@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Whitelist from '../components/Whitelist';
 import background from './bg.png';
-
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 function Whitelistpage() {
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <div>
-      <img src={background} style={{position: 'absolute', width: "100vw", top: 0, left: 0, zIndex: -1, height: "160vh"}}/>
+    <div style={{backgroundImage: `url(${background})`, backgroundSize: "cover"}}>
+      <Header navbarOpen={navbarOpen} setNavbarOpen={setNavbarOpen}/>
       <Whitelist/>
+      <Footer/>
     </div>
   );
 }

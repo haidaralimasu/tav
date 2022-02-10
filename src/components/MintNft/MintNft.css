@@ -55,3 +55,14 @@
     color: #000;
     font-size: 25px;
 }
+
+@media screen and (max-width:800px) {
+    .MintNft__title{
+        font-size: 30px;
+    }
+
+    .MintNft__button{
+        font-weight: normal;
+        font-size: 25px;
+    }
+}

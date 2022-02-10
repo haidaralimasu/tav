@@ -21,7 +21,7 @@ function Hero() {
             </div>
             <Link to="/burn" style={{color: "black", textDecoration: "none"}}><div className="Hero__button white_button">
                 <img src={PlayIcon} className="Hero__button_icon" alt="Play" style={{width: "17px"}}/>
-                Go To An App
+                Go to App
             </div>
             </Link>
         </div>

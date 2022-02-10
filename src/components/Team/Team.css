@@ -7,6 +7,7 @@
     margin-left: 50px;
     margin-right: 50px;
     padding-bottom: 100px;
+    flex-wrap: wrap;
 }
 
 .Team__member{
@@ -14,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .Team__member_image{
@@ -33,4 +35,10 @@
 
 .highlighted_member{
     background-color: rgb(209, 172, 77);
+}
+
+@media only screen and (max-width: 800px) {
+    .Team{
+        margin-left: 18vw;
+    }
 }
