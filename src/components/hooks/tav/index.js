@@ -111,12 +111,6 @@ export function useWalletOfOwner(userAddress) {
       method: "walletOfOwner",
       args: [userAddress],
     }) ?? [];
-  const wallet = walletOfOwner ? walletOfOwner : [0];
-  //   return wallet;
-
-  var result = wallet.map(function (x) {
-    return parseInt(x, 10);
-  });
-
-  return result;
+  const wallet = walletOfOwner ? walletOfOwner.toNumber() : 0;
+  return wallet;
 }

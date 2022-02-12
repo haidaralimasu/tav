@@ -1,5 +1,5 @@
 import "./MintHero.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   useCost,
   useWeiCost,
@@ -15,7 +15,7 @@ import { tavAddress } from "../../contract/tav";
 import tavabi from "../../contract/tav/TAV.json";
 import { useEthers } from "@usedapp/core";
 import { ethers } from "ethers";
-import { notifyMintSuccess, notifyError } from "../../toast";
+import { notifyMintSuccess, notifyError, notifyNetworkR } from "../../toast";
 
 const nftInterface = new ethers.utils.Interface(tavabi);
 
@@ -32,21 +32,11 @@ function MintHero() {
   const wallet = useWalletOfOwner(account);
   const [minting, setMinting] = useState(false);
 
-  const [nfts, setNfts] = useState([]);
-
-  function loadNFTs() {
-    setNfts(wallet);
-
-    return nfts;
-  }
-
-  useEffect(() => {
-    loadNFTs();
-  }, []);
-
-  console.log(nfts);
-
   // console.log(limit);
+
+  const onError = () => {
+    notifyNetworkR();
+  };
 
   // console.log(wallet);
   async function handleMint() {
@@ -118,7 +108,7 @@ function MintHero() {
         </div>
       ) : (
         <div
-          onClick={() => activateBrowserWallet()}
+          onClick={() => activateBrowserWallet(onError)}
           style={{ color: "black", textDecoration: "none", cursor: "pointer" }}
         >
           <div className="MintHero__button">Connect</div>
@@ -127,11 +117,6 @@ function MintHero() {
       <div className="MintHero__description">
         TAV is an expermintal project on ether testnet ask for a whitelist on
         discord.
-      </div>
-      <div>
-        {nfts.map((nft, i) => {
-          return <div style={{ color: "white" }}>{nft}</div>;
-        })}
       </div>
     </div>
   );

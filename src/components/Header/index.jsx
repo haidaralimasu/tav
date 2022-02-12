@@ -47,7 +47,9 @@ function Header({ navbarOpen, setNavbarOpen }) {
               <Link to="/mint" className="SidebarItem">
                 Isekai
               </Link>
-              <div className="SidebarItem">TAV</div>
+              <Link to="/burn" className="SidebarItem">
+                TAV
+              </Link>
               <div className="SidebarItem">
                 <img
                   src={OpenseaLogo}
@@ -92,10 +94,12 @@ function Header({ navbarOpen, setNavbarOpen }) {
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
             <div className="Header__item">Home</div>
           </Link>
-          <Link to="/mint" className="Header__item Header__item_active">
+          <Link to="/mint" className="Header__item Header__item">
             Isekai
           </Link>
-          <div className="Header__item">TAV</div>
+          <Link to="/burn" className="Header__item">
+            TAV
+          </Link>
         </div>
         <div className="Header__right">
           <img src={OpenseaLogo} alt="OpenSea" className="Header__item_logo" />
