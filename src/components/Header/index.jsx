@@ -102,14 +102,17 @@ function Header({ navbarOpen, setNavbarOpen }) {
           </Link>
         </div>
         <div className="Header__right">
-          <a href="https://opensea.io/collection/isekaibyprestige">
+          <a
+            href="https://opensea.io/collection/isekaibyprestige"
+            target="blank"
+          >
             <img
               src={OpenseaLogo}
               alt="OpenSea"
               className="Header__item_logo"
             />
           </a>
-          <a href="http://discord.gg/6CcbZpHTng">
+          <a href="http://discord.gg/6CcbZpHTng" target="blank">
             <img
               src={DiscordLogo}
               alt="Discord"
@@ -117,14 +120,17 @@ function Header({ navbarOpen, setNavbarOpen }) {
               style={{ width: "40px", height: "40px", padding: "5px" }}
             />
           </a>
-          <a href="https://www.youtube.com/channel/UC7LNw1x46FJGkaiew5ptdvg">
+          <a
+            href="https://www.youtube.com/channel/UC7LNw1x46FJGkaiew5ptdvg"
+            target="blank"
+          >
             <img
               src={YoutubeLogo}
               alt="Youtube"
               className="Header__item_logo_transparent"
             />
           </a>
-          <a href="https://twitter.com/PrestigeDef">
+          <a target="blank" href="https://twitter.com/PrestigeDef">
             <img
               src={TwitterLogo}
               alt="Twitter"
