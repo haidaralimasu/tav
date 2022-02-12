@@ -70,9 +70,7 @@ function MintNft() {
       <h1 style={{ color: "white" }}>
         {totalSupply}/{maxSupply}
       </h1>
-      <em className="MintNft__subtitle">
-        Price per {cost} {ethers.constants.EtherSymbol}
-      </em>
+      <em className="MintNft__subtitle">Price per Isekai {cost}</em>
 
       {chainId !== 1 ? (
         <em className="MintNft__subtitle">

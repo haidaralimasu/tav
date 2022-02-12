@@ -1,15 +1,138 @@
-import './MintHero.css';
-import React from 'react';
-import {Link} from 'react-router-dom';
+import "./MintHero.css";
+import React, { useState, useEffect } from "react";
+import {
+  useCost,
+  useWeiCost,
+  useWalletOfOwner,
+  useTotalSupply,
+  useMaxSupply,
+  useOnlyWhitelisted,
+  useIsWhitelisted,
+  useNftPerAddressLimit,
+  useAddressMintedBalance,
+} from "../hooks/tav";
+import { tavAddress } from "../../contract/tav";
+import tavabi from "../../contract/tav/TAV.json";
+import { useEthers } from "@usedapp/core";
+import { ethers } from "ethers";
+import { notifyMintSuccess, notifyError } from "../../toast";
+
+const nftInterface = new ethers.utils.Interface(tavabi);
 
 function MintHero() {
+  const { account, activateBrowserWallet } = useEthers();
+  const totalSupply = useTotalSupply();
+  const maxSupply = useMaxSupply();
+  const cost = useCost();
+  const weiCost = useWeiCost();
+  const limit = useNftPerAddressLimit();
+  const balance = useAddressMintedBalance(account);
+  const onlyWhitelisted = useOnlyWhitelisted();
+  const isWhitelisted = useIsWhitelisted(account);
+  const wallet = useWalletOfOwner(account);
+  const [minting, setMinting] = useState(false);
+
+  const [nfts, setNfts] = useState([]);
+
+  function loadNFTs() {
+    setNfts(wallet);
+
+    return nfts;
+  }
+
+  useEffect(() => {
+    loadNFTs();
+  }, []);
+
+  console.log(nfts);
+
+  // console.log(limit);
+
+  // console.log(wallet);
+  async function handleMint() {
+    try {
+      setMinting(true);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      /* next, create the item */
+      let nftcontract = new ethers.Contract(tavAddress, nftInterface, signer);
+      let transaction = await nftcontract.mint(1, {
+        value: weiCost,
+      });
+      await transaction.wait();
+      setMinting(false);
+
+      notifyMintSuccess();
+    } catch (error) {
+      notifyError();
+      console.log(error);
+      setMinting(false);
+    }
+  }
+
   return (
     <div className="MintHero">
+      {isWhitelisted ? (
+        <div className="MintHero__title">
+          Congrationaltions you are whitlisted click below to mint
+        </div>
+      ) : null}
       <div className="MintHero__title">
-        Congrationaltions you are whitlisted click below to mint
+        {totalSupply} / {maxSupply}
       </div>
-      <Link to="/mint" style={{color: "black", textDecoration: "none"}}><div className="MintHero__button">Mint TAV</div></Link>
-      <div className="MintHero__description">TAV is an expermintal project on ether testnet ask for a whitelist on discord.</div>
+      <div className="MintHero__description">Price per TAV {cost}</div>
+      {account ? (
+        <div
+          style={{ color: "black", textDecoration: "none", cursor: "pointer" }}
+        >
+          <>
+            {onlyWhitelisted ? (
+              <>
+                {isWhitelisted ? (
+                  <>
+                    {balance < limit ? (
+                      <div
+                        onClick={() => handleMint()}
+                        className="MintHero__button"
+                      >
+                        {minting ? "Please Wait" : "MINT TAV"}
+                      </div>
+                    ) : (
+                      <div className="MintHero__button">
+                        You cannot mint more than one
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <div className="MintHero__button">
+                    You are not whitelisted
+                  </div>
+                )}
+              </>
+            ) : (
+              <div onClick={() => handleMint()} className="MintHero__button">
+                {minting ? "Please Wait" : "MINT TAV"}
+              </div>
+            )}
+          </>
+        </div>
+      ) : (
+        <div
+          onClick={() => activateBrowserWallet()}
+          style={{ color: "black", textDecoration: "none", cursor: "pointer" }}
+        >
+          <div className="MintHero__button">Connect</div>
+        </div>
+      )}
+      <div className="MintHero__description">
+        TAV is an expermintal project on ether testnet ask for a whitelist on
+        discord.
+      </div>
+      <div>
+        {nfts.map((nft, i) => {
+          return <div style={{ color: "white" }}>{nft}</div>;
+        })}
+      </div>
     </div>
   );
 }

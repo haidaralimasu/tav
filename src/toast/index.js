@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 
 export const notifyMintSuccess = () => {
-  toast.success("You have successfully minted your Dominant Eagle NFT", {
+  toast.success("You have successfully minted your  NFT", {
     position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
