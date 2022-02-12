@@ -1,1 +1,1 @@
-export const tavAddress = "0x46b88E24A4DA3740AE5bAA9e0912E5C096282946";
+export const tavAddress = "0x77AF4Fa6b27ad3bE9970c208609f818461f8E4D8";
