@@ -17,7 +17,7 @@ function Hero() {
         <div className="Hero__button_row">
             <div className="Hero__button" style={{marginRight: "20px"}}>
                 <img src={ChessIcon} className="Hero__button_icon" alt="Chess" />
-                <a href="https://www.teenagehero.fun/" style={{color:"white", textDecoration:"none"}} target="blank" >Play Chess Game</a>
+                <a href="https://www.teenagehero.fun/" style={{color:"black", textDecoration:"none"}} target="blank" >Play Chess Game</a>
             </div>
             <Link to="/burn" style={{color: "black", textDecoration: "none"}}><div className="Hero__button white_button">
                 <img src={PlayIcon} className="Hero__button_icon" alt="Play" style={{width: "17px"}}/>
