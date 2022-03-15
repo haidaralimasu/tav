@@ -68,7 +68,7 @@ function MintNft() {
         start your journey
       </div>
       <h1 style={{ color: "white" }}>
-        {totalSupply}/{maxSupply}
+        {totalSupply}/2000
       </h1>
       <em className="MintNft__subtitle">Price per Isekai {cost}</em>
 
